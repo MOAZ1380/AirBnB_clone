@@ -1,5 +1,12 @@
 import json
 from models.base_model import BaseModel
+from models.user import User
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
+from models.state import State
+from models.place import Place
+
 import os
 
 
@@ -25,15 +32,26 @@ class FileStorage:
     def save(self):
         obj_dict = {ke : val.to_dict() for ke, val in FileStorage.__objects.items()}
         with open(FileStorage.__file_path, "w") as sa:
-            json.dump(obj_dict, sa)
+            json.dump(obj_dict, sa, indent=4)
     
     
     def reload(self):
+        
+        class_d = {
+            "BaseModel" : BaseModel,
+            "User" : User,
+            "Place" : Place,
+            "State" : State,
+            "Review" : Review,
+            "Amenity" : Amenity,
+            "City" : City
+        }
+        
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r") as re:
                 obj_dict = json.load(re)
                 for key, value in obj_dict.items():
                     class_name = value['__class__']
-                    obj = globals()[class_name](**value)
+                    obj = class_d[class_name](**value)
                     FileStorage.__objects[key] = obj
             
