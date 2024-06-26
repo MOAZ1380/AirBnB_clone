@@ -22,11 +22,9 @@ classname = {
 
 class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
-    intro = 'Welcome to the HBNB CLI. Type help or ? to list commands.'
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
-        print('Quitting...')
         return True
 
     def do_EOF(self, arg):
