@@ -21,27 +21,37 @@ classname = {
         }
 
 class HBNBCommand(cmd.Cmd):
-    prompt = "(hbnb)"
+    prompt = '(hbnb) '
+    intro = 'Welcome to the HBNB CLI. Type help or ? to list commands.'
 
     def do_quit(self, arg):
         """Quit command to exit the program"""
+        print('Quitting...')
         return True
 
     def do_EOF(self, arg):
-        """Handle EOF to exit the program"""
+        """End of File command to exit the program"""
+        print('')
         return True
-
-    def help_quit(self):
-        """Help information for quit command"""
-        print("Quit command to exit the program")
-
-    def help_EOF(self):
-        """Help information for EOF command"""
-        print("EOF command to exit the program")
 
     def emptyline(self):
         """Do nothing on empty input line"""
         pass
+
+    def do_help(self, arg):
+        if arg:
+            if arg == 'quit':
+                print('Quit command to exit the program')
+            elif arg == 'EOF':
+                print('End of File command to exit the program')
+            else:
+                print(f"No help available for {arg}")
+        else:
+            print("""
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+            """)
     
     
     
