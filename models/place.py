@@ -1,6 +1,8 @@
+""" Class Place """
 from models.base_model import BaseModel
 
 class Place(BaseModel):
+    """ Class Place """
     
     city_id = ""
     user_id = ""

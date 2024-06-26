@@ -1,3 +1,4 @@
+"""An interactive shell?"""
 import cmd
 from models.base_model import BaseModel
 from models import storage
@@ -32,11 +33,11 @@ class HBNBCommand(cmd.Cmd):
 
     def help_quit(self):
         """Help information for quit command"""
-        # print("Quit command to exit the program")
+        print("Quit command to exit the program")
 
     def help_EOF(self):
         """Help information for EOF command"""
-        # print("EOF command to exit the program")
+        print("EOF command to exit the program")
 
     def emptyline(self):
         """Do nothing on empty input line"""
@@ -45,6 +46,8 @@ class HBNBCommand(cmd.Cmd):
     
     
     def do_create(self, arg):
+            
+            """Creates a new instances of a class"""
             
             if arg:                         
                 if arg in classname:
@@ -59,6 +62,8 @@ class HBNBCommand(cmd.Cmd):
                         
                         
     def do_show(self, arg):
+        
+        """print <class name> <id>"""
         
         split_arg = arg.split()    
 
@@ -78,6 +83,7 @@ class HBNBCommand(cmd.Cmd):
                 
                 
     def do_destroy(self, arg):
+        """Destroy command deletes an instance based on the class name and id"""
         
         split_arg = arg.split()    
 
@@ -97,7 +103,8 @@ class HBNBCommand(cmd.Cmd):
                 
     
     
-    def do_all(self, arg):             ###     يحتاج تعديل في الاخراج فقط   ###
+    def do_all(self, arg):
+        """ Print all instances in string representation """
         
         if arg:
             if arg in classname:
@@ -113,6 +120,12 @@ class HBNBCommand(cmd.Cmd):
                             
     def do_update(self, arg):
         
+        """Update a class instance of a given id by adding or updating
+        a given attribute key/value pair or dictionary.
+        usage:  update <class> <id> <attribute_name> <attribute_value> or
+                <class>.update(<id>, <attribute_name>, <attribute_value>) or
+                <class>.update(<id>, <dictionary>)
+        """
         split_arg = arg.split()
         
         if len(split_arg) < 1:   # 1

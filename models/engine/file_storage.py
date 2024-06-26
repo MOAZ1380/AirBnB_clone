@@ -1,3 +1,7 @@
+"""
+Serializes instances to a JSON file and
+deserializes JSON file to instances.
+"""
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -13,29 +17,36 @@ import os
 
 
 class FileStorage:
+    """The file storage engine class, that is;
+    A class that serialize and deserialize instances to a JSON file
+    """
     
     __file_path = 'file.json'
     __objects = {}
     
     def all(self):
+        """Returns the dictionary of objects"""
         return FileStorage.__objects
     
     
     
     
     def new(self, obj):
+        """Sets new obj in __objects dictionary."""
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
     
     
     
     def save(self):
+        """serializes __objects to the JSON file (path: __file_path)"""
         obj_dict = {ke : val.to_dict() for ke, val in FileStorage.__objects.items()}
         with open(FileStorage.__file_path, "w") as sa:
             json.dump(obj_dict, sa, indent=4)
     
     
     def reload(self):
+        """Deserializes the JSON file to __objects if it exists"""
         
         class_d = {
             "BaseModel" : BaseModel,
