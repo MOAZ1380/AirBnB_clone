@@ -14,8 +14,6 @@ from models.place import Place
 import os
 
 
-
-
 class FileStorage:
     """The file storage engine class, that is;
     A class that serialize and deserialize instances to a JSON file
@@ -35,21 +33,24 @@ class FileStorage:
 
     def save(self):
         """serializes __objects to the JSON file (path: __file_path)"""
-        obj_dict = {ke : val.to_dict() for ke, val in FileStorage.__objects.items()}
-        with open(FileStorage.__file_path, "w") as sa:
-            json.dump(obj_dict, sa, indent=4)
+        new_dict = []
+        for obj in type(self).__objects.values():
+            new_dict.append(obj.to_dict())
+
+        with open(type(self).__file_path, "w", encoding='utf-8') as file:
+            json.dump(new_dict, file)
 
     def reload(self):
         """Deserializes the JSON file to __objects if it exists"""
 
         class_d = {
-            "BaseModel" : BaseModel,
-            "User" : User,
-            "Place" : Place,
-            "State" : State,
-            "Review" : Review,
-            "Amenity" : Amenity,
-            "City" : City
+            "BaseModel": BaseModel,
+            "User": User,
+            "Place": Place,
+            "State": State,
+            "Review": Review,
+            "Amenity": Amenity,
+            "City": City
         }
 
         if os.path.exists(FileStorage.__file_path):
