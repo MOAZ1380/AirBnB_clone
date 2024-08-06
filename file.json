@@ -1,33 +1,32 @@
 {
-    "BaseModel.e9f45120-7f30-4fc2-a00f-c78277084e83": {
-        "id": "e9f45120-7f30-4fc2-a00f-c78277084e83",
-        "created_at": "2024-06-25T17:41:43.793900",
-        "updated_at": "2024-06-25T17:41:43.793900",
+    "BaseModel.3f76632d-790b-48c4-b197-dbf8c3267b65": {
+        "id": "3f76632d-790b-48c4-b197-dbf8c3267b65",
+        "created_at": "2024-08-03T18:31:55.940122",
+        "updated_at": "2024-08-03T18:31:55.940122",
         "__class__": "BaseModel"
     },
-    "BaseModel.9815d0ff-c658-449e-bb17-8678e1a74fc6": {
-        "id": "9815d0ff-c658-449e-bb17-8678e1a74fc6",
-        "created_at": "2024-06-25T17:42:10.194764",
-        "updated_at": "2024-06-25T17:42:10.194764",
-        "first_name": "\"Betty\"",
+    "BaseModel.3d697c67-f4b5-4111-821e-082918d806f1": {
+        "id": "3d697c67-f4b5-4111-821e-082918d806f1",
+        "created_at": "2024-08-03T18:32:09.004689",
+        "updated_at": "2024-08-03T18:32:09.004689",
         "__class__": "BaseModel"
     },
-    "BaseModel.9385d601-8009-4e69-a5f4-94b57aa2a48f": {
-        "id": "9385d601-8009-4e69-a5f4-94b57aa2a48f",
-        "created_at": "2024-06-25T17:46:39.175270",
-        "updated_at": "2024-06-25T17:46:39.175270",
+    "BaseModel.ee18ec17-53ef-4a45-96b2-f12807f06bd2": {
+        "id": "ee18ec17-53ef-4a45-96b2-f12807f06bd2",
+        "created_at": "2024-08-03T18:32:50.237902",
+        "updated_at": "2024-08-03T18:32:50.237902",
         "__class__": "BaseModel"
     },
-    "User.9cb2ae9a-6a6d-4140-b940-dd3f228937d8": {
-        "id": "9cb2ae9a-6a6d-4140-b940-dd3f228937d8",
-        "created_at": "2024-06-26T01:03:00.765315",
-        "updated_at": "2024-06-26T01:03:00.765315",
+    "BaseModel.ac3439ea-d081-4e13-bf31-306afec6cf3d": {
+        "id": "ac3439ea-d081-4e13-bf31-306afec6cf3d",
+        "created_at": "2024-08-03T18:33:01.364086",
+        "updated_at": "2024-08-03T18:33:01.364086",
+        "__class__": "BaseModel"
+    },
+    "User.422fef8c-882d-4b1d-bdbc-e31c3785da35": {
+        "id": "422fef8c-882d-4b1d-bdbc-e31c3785da35",
+        "created_at": "2024-08-03T18:33:16.691376",
+        "updated_at": "2024-08-03T18:33:16.691376",
         "__class__": "User"
-    },
-    "BaseModel.c33e89fa-dc39-4d7e-8087-e62459788c3c": {
-        "id": "c33e89fa-dc39-4d7e-8087-e62459788c3c",
-        "created_at": "2024-06-26T01:03:17.350008",
-        "updated_at": "2024-06-26T01:03:17.350008",
-        "__class__": "BaseModel"
     }
 }
